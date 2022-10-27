@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="696.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mp3.mp3player.MyController">
+    <Label fx:id="songLabel" alignment="CENTER" layoutY="66.0" opacity="0.6" prefHeight="38.0" prefWidth="696.0"
+           text="Label" textFill="#19c92594">
+        <font>
+            <Font name="Arial Rounded MT Bold" size="31.0"/>
+        </font>
+    </Label>
+    <ProgressBar fx:id="songProgressBar" layoutY="283.0" opacity="0.6" prefHeight="33.0" prefWidth="696.0"
+                 progress="0.0" style="-fx-accent: #00FF00;">
+        <effect>
+            <Bloom/>
+        </effect>
+    </ProgressBar>
+    <Button fx:id="pauseButton" layoutX="440.0" layoutY="327.0" mnemonicParsing="false" onAction="#pauseMedia"
+            prefHeight="38.0" prefWidth="124.0" style="-fx-background-color: #19c92594;" text="Pause"
+            textOverrun="LEADING_WORD_ELLIPSIS">
+        <effect>
+            <DropShadow/>
+        </effect>
+        <font>
+            <Font name="Arial Rounded MT Bold" size="12.0"/>
+        </font>
+    </Button>
+    <Button fx:id="playButton" layoutX="281.0" layoutY="327.0" mnemonicParsing="false" onAction="#playMedia"
+            prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: #19c92594;" text="Play"
+            textOverrun="CENTER_ELLIPSIS">
+        <effect>
+            <DropShadow/>
+        </effect>
+        <font>
+            <Font name="Arial Rounded MT Bold" size="12.0"/>
+        </font>
+    </Button>
+    <Button fx:id="previousButton" layoutX="163.0" layoutY="327.0" mnemonicParsing="false" onAction="#previousMedia"
+            prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #19c92594;" text="Previous">
+        <effect>
+            <DropShadow/>
+        </effect>
+        <font>
+            <Font name="Arial Rounded MT Bold" size="12.0"/>
+        </font>
+    </Button>
+    <Button fx:id="nextButton" layoutX="577.0" layoutY="327.0" mnemonicParsing="false" onAction="#nextMedia"
+            prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: #19c92594;" text="Next">
+        <font>
+            <Font name="Arial Rounded MT Bold" size="12.0"/>
+        </font>
+        <effect>
+            <DropShadow/>
+        </effect>
+    </Button>
+    <Button fx:id="resetButton" layoutX="14.0" layoutY="327.0" mnemonicParsing="false" onAction="#resetMedia"
+            prefHeight="38.0" prefWidth="118.0" style="-fx-background-color: #19c92594;" text="Reset">
+        <font>
+            <Font name="Arial Rounded MT Bold" size="12.0"/>
+        </font>
+        <effect>
+            <DropShadow/>
+        </effect>
+    </Button>
+    <ComboBox fx:id="speedComboBox" layoutX="14.0" layoutY="14.0" onAction="#changeSpeed" prefHeight="38.0"
+              prefWidth="87.0" promptText="Speed" style="-fx-background-color: #19c92594;">
+        <effect>
+            <DropShadow/>
+        </effect>
+    </ComboBox>
+    <Slider fx:id="volumeSlider" blendMode="LIGHTEN" layoutX="519.0" layoutY="21.0" prefHeight="38.0" prefWidth="140.0"
+            showTickLabels="true" style="-fx-border-color: #19c92594;" value="50.0">
+        <effect>
+            <DropShadow blurType="GAUSSIAN"/>
+        </effect>
+    </Slider>
+   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="273.0" layoutY="118.0" pickOnBounds="true"
+              preserveRatio="true">
+      <Image url="@mp3playerIcon.png"/>
+   </ImageView>
+</AnchorPane>
